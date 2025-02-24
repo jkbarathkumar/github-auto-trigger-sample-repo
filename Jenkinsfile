@@ -71,17 +71,22 @@ pipeline {
                     // Remove the existing auto-trigger-learning directory if it exists
                     sh 'rm -rf jkbarathkumar.github.io'
 
+                    //sh 'mkdir jkbarathkumar.git'
+
+                    sh 'ls -la'
+
                     // Clone repo-B (GitHub Pages)
-                    sh 'git clone https://github.com/jkbarathkumar/jkbarathkumar.github.io.git'
+                    sh 'git clone https://github.com/jkbarathkumar/jkbarathkumar.github.io'
+                
 
                     // Copy all files from the current workspace (including renamed/added files)
-                    sh 'cp -r * jkbarathkumar.github.io/'
+                    sh 'find . -maxdepth 1 -type f -exec mv {} jkbarathkumar.github.io/ \;'
 
                     // Go to the target directory (auto-trigger-learning)
                     dir('auto-trigger-learning') {
                         // Configure Git identity for Jenkins
-                        sh 'git config user.name "Jenkins CI"'
-                        sh 'git config user.email "jenkins@yourdomain.com"'
+                        sh 'git config user.name "jkbarathkumar"'
+                        sh 'git config user.email "jkbarathkumar@gmail.com"'
 
                         // Check the status and add all modified, renamed, or deleted files
                         sh 'git add .'
