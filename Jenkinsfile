@@ -80,7 +80,7 @@ pipeline {
                 
 
                     // Copy all files from the current workspace (including renamed/added files)
-                    sh 'find . -maxdepth 1 -type f -exec mv {} jkbarathkumar.github.io/ \;'
+                    sh 'find . -maxdepth 1 -type f -exec mv {} jkbarathkumar.github.io/ \\;'
 
                     // Go to the target directory (auto-trigger-learning)
                     dir('auto-trigger-learning') {
