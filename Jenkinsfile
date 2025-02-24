@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        GITHUB_TOKEN = credentials('Github_test') // Use your correct GitHub credentials ID
+        GITHUB_TOKEN = credentials('GitHub_PAT') // Use your stored GitHub PAT credentials ID
     }
 
     stages {
@@ -32,7 +32,7 @@ pipeline {
                     // Commit and push the changes to repo-B
                     sh 'git add .'
                     sh 'git commit -m "Deploy updated code"'
-                    sh 'git push https://jkbarathkumar:${GITHUB_TOKEN}@github.com/jkbarathkumar/auto-trigger-learning.git'
+                    sh 'git push https://$GITHUB_TOKEN@github.com/jkbarathkumar/auto-trigger-learning.git'
                 }
             }
         }
