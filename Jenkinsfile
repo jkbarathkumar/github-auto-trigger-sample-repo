@@ -83,7 +83,7 @@ pipeline {
                     sh 'find . -maxdepth 1 -type f -exec mv {} jkbarathkumar.github.io/ \\;'
 
                     // Go to the target directory (auto-trigger-learning)
-                    dir('auto-trigger-learning') {
+                    dir('jkbarathkumar.github.io') {
                         // Configure Git identity for Jenkins
                         sh 'git config user.name "jkbarathkumar"'
                         sh 'git config user.email "jkbarathkumar@gmail.com"'
