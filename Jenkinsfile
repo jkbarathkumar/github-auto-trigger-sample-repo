@@ -93,6 +93,8 @@ pipeline {
                         
                         // Commit the changes with a message
                         sh 'git commit -m "Deploy updated code"'
+                        sh 'git diff --cached --name-only'
+
 
                         // Push the changes to the destination repository
                         sh 'git push https://$GITHUB_TOKEN@github.com/jkbarathkumar/jkbarathkumar.github.io.git'
