@@ -18,8 +18,8 @@ pipeline {
                 // Clone repo-B where GitHub Pages is hosted
                 sh 'git clone https://github.com/jkbarathkumar/auto-trigger-learning.git'
 
-                // Copy the latest code from repo-A into repo-B
-                sh 'cp -r * auto-trigger-learning/'
+                // Copy the relevant files to repo-B (exclude the repo itself)
+                sh 'cp -r Jenkinsfile index.html script.js style.css auto-trigger-learning/'
 
                 // Commit and push the changes to repo-B
                 dir('auto-trigger-learning') {
