@@ -15,6 +15,9 @@ pipeline {
         
         stage('Deploy to GitHub Pages') {
             steps {
+                // Remove the existing directory if it exists
+                sh 'rm -rf auto-trigger-learning'
+
                 // Clone repo-B where GitHub Pages is hosted
                 sh 'git clone https://github.com/jkbarathkumar/auto-trigger-learning.git'
 
