@@ -69,7 +69,7 @@ pipeline {
             steps {
                 script {
                     // Remove the existing auto-trigger-learning directory if it exists
-                    sh 'rm -rf auto-trigger-learning'
+                    sh 'rm -rf jkbarathkumar.github.io'
 
                     // Clone repo-B (GitHub Pages)
                     sh 'git clone https://github.com/jkbarathkumar/jkbarathkumar.github.io.git'
