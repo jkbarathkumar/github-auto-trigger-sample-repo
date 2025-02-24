@@ -75,7 +75,7 @@ pipeline {
                     sh 'git clone https://github.com/jkbarathkumar/jkbarathkumar.github.io.git'
 
                     // Copy all files from the current workspace (including renamed/added files)
-                    sh 'cp -r * auto-trigger-learning/'
+                    sh 'cp -r * jkbarathkumar.github.io/'
 
                     // Go to the target directory (auto-trigger-learning)
                     dir('auto-trigger-learning') {
