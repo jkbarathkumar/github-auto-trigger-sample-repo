@@ -24,8 +24,12 @@ pipeline {
                 // Copy the relevant files to repo-B (exclude the repo itself)
                 sh 'cp -r Jenkinsfile index.html script.js style.css auto-trigger-learning/'
 
-                // Commit and push the changes to repo-B
+                // Configure Git identity for Jenkins user
                 dir('auto-trigger-learning') {
+                    sh 'git config user.name "jkbarathkumar"'
+                    sh 'git config user.email "jkbarathkumar@gmail.com"'
+
+                    // Commit and push the changes to repo-B
                     sh 'git add .'
                     sh 'git commit -m "Deploy updated code"'
                     sh 'git push https://jkbarathkumar:${GITHUB_TOKEN}@github.com/jkbarathkumar/auto-trigger-learning.git'
