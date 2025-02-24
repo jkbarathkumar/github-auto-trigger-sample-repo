@@ -32,7 +32,7 @@ pipeline {
                     // Commit and push the changes to repo-B
                     sh 'git add .'
                     sh 'git commit -m "Deploy updated code"'
-                    sh 'git push https://$GITHUB_TOKEN@github.com/jkbarathkumar/auto-trigger-learning.git'
+                    sh 'git push https://$GITHUB_TOKEN@github.com/jkbarathkumar/jkbarathkumar.github.io'
                 }
             }
         }
