@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy to GitHub Pages') {
             steps {
                 // Clone repo-B where GitHub Pages is hosted
-                sh 'https://github.com/jkbarathkumar/auto-trigger-learning.git'
+                sh 'git clone https://github.com/jkbarathkumar/auto-trigger-learning.git'
 
                 // Copy the latest code from repo-A into repo-B
                 sh 'cp -r * repo-B/'
